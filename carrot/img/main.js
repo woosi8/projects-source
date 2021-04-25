@@ -18,7 +18,6 @@ let timer = undefined;
 const pickElem = function randomNum(lower, upper) {
 	for (var i = 0; i < 1; i++) {
 		let myRandom = Math.floor(Math.random() * (upper - lower + 1)) + lower;
-		console.log(myRandom);
 		return myRandom;
 	}
 };
@@ -38,7 +37,6 @@ function initGame() {
 	addItem("bug", bugCount, "img/bug.png");
 }
 function addItem(className, count, imgPath) {
-	console.log(count);
 	const x1 = 0;
 	const y1 = 0;
 	const x2 = fieldRect.width - CARROT_SIZE;

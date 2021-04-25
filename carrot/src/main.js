@@ -31,12 +31,15 @@ const game = new GameBuilder()
 	.build();
 
 // const game = new Game(5,carrotCount,bugCount);
-// game에서 stop() 인자값(Reason)을 받아온다
+// 1. game.js에서 stop() 인자값(Reason)을 받아온다
+// 2. game.js의 onItemClick에서 stop의 reason을 받아온다
+// 3. filed.js의 onClick에서 받아온 setClickListener의 onItemClick인자를 game에 전달한다
 game.setGamestopListener((reason) => {
 	let message;
+	console.log(reason);
 	switch (reason) {
 		// game의 Reason 오브젝트를 받아온다
-		case Reason.win: //Reason을 써주고 뒤에 보면 써줄수있는게 3개뿐이여서 오타 확률을 줄여준다
+		case Reason.win: //Reason을 써주고 뒤에는 들어올수있는게 3개뿐이여서 오타 확률을 줄여준다
 			message = "YOU WON 🎉";
 			sound.playWin();
 			break;

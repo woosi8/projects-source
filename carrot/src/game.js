@@ -77,8 +77,8 @@ class Game {
 		sound.playBackground();
 	}
 
+	//reason은 onItemClick, startGameTimer, gameBtn Click 이벤트에서 받아온다
 	stop(reason) {
-		//reason은 onItemClick, startGameTimer, gameBtn Click 이벤트에서 받아온다
 		this.started = false;
 		this.stopGameTimer(); //타이머가 중지되도록
 		this.hideGameButton(); //중지하면 버튼을 없애기
@@ -88,8 +88,8 @@ class Game {
 		this.onGameStop && this.onGameStop(reason);
 	}
 
+	// item : filed에 onClick 함수에서 carrot or bug를 받아온다
 	onItemClick = (item) => {
-		// item : filed에 onClick 함수에서 받아온다
 		if (!this.started) {
 			return;
 		}

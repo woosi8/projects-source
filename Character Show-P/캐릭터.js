@@ -48,6 +48,7 @@ function Character(info) {
 
 //////// 클래스에 기능 추가하기
 Character.prototype = {
+	// 재정의
 	constructor: Character,
 	init: function () {
 		// Init : 스크롤 이벤트 -  1. 스크롤시 캐릭터에 러닝 붙여주고 멈추면 제거해줘서 멈추게 하기.

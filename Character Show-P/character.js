@@ -72,7 +72,6 @@ Character.prototype = {
 				self.scrollState = false; //멈춘상태
 				self.mainElem.classList.remove("running");
 			}, 500);
-			console.log(self.scrollState);
 
 			// 캐릭터 앞뒤 설정 : 현재보다 큰 값인지 작은값인지로 판단 가능
 			// Check 이전 스크롤 위치(self.lastScrollTop) VS 현재 스크롤 위치(pageYOffset)

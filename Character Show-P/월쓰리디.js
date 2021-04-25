@@ -13,8 +13,8 @@
 	// 1. 스크롤시 z값 움직임에 대응되서 화면 움직이기
 	window.addEventListener("scroll", () => {
 		// 스크롤 값을 비율로 구하기 위해 = 현재화면의 높이값 / 전체 스크롤할수있는양
-		//  world에서 준 디폴트 z값이 -490이 있으니깐
 		const scrollPer = pageYOffset / maxScrollValue;
+		//  world에서 준 디폴트 z값이 -490이 있으니깐
 		//  scrollper 값이 0~1까지라서 너무 작아서 1000단위로 해주는것 (490은 css에서 해준것처럼 시작을 멀리 떨어진것처럼해준다)
 		const zMove = scrollPer * 980 - 490;
 		// houseElem.style.transform = "translateZ(" + zMove + "vw)";
@@ -29,6 +29,8 @@
 	function resizeHandler() {
 		maxScrollValue = document.body.offsetHeight - window.innerHeight;
 	}
+	// 처음에 로딩됐을때 실행해주기
+	resizeHandler();
 
 	// 3. 마우스 위치 찾아 효과주기 이벤트 (가운데 포인트가 0,0이 되게하기)
 	// 스테이지 클래스를 움직인다. 왜냐면 house랑 캐릭터가 같이 움직이게 되게 하기위해
@@ -61,10 +63,6 @@
 	// 캐릭터 설정 ( 일부니, 라면 선택 하면 그 해당 타켓의 html data속성값을 가져와서 body에 넣어준다)
 	selectCharacterElem.addEventListener("click", (e) => {
 		const value = e.target.getAttribute("data-char");
-		console.log(value);
 		document.body.setAttribute("data-char", value);
 	});
-
-	// 처음에 로딩됐을때 실행해주기
-	resizeHandler();
 })();
